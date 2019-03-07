@@ -228,10 +228,7 @@
               if (this.question.downvotes.indexOf(votersId) != -1) {
                 axios.patch(`${this.url}/questions/${id}`, { $pull: { downvotes: localStorage.getItem('id') } })
               }
-              return axios.get(`${this.url}/questions/${this.$route.params.questionId}`)
-            })
-            .then((response) => {
-              this.question = response.data
+              this.getQuestion()
             })
             .catch((error) => {
               console.log(error);
@@ -255,10 +252,7 @@
               if (this.question.upvotes.indexOf(votersId) != -1) {
                 axios.patch(`${this.url}/questions/${id}`, { $pull: { upvotes: localStorage.getItem('id') } })
               }
-              return axios.get(`${this.url}/questions/${this.$route.params.questionId}`)
-            })
-            .then((response) => {
-              this.question = response.data
+              this.getQuestion()
             })
             .catch((error) => {
               console.log(error);

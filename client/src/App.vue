@@ -55,7 +55,7 @@ export default {
   data () {
     return {
       isLogin: false,
-      url: 'http://localhost:3000',
+      url: 'https://hacktivoverflow-server.patriagani.site',
     }
   },
   methods: {
